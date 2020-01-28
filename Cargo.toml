@@ -5,6 +5,8 @@ members = [
   "dsf-rpc",
   "dsf-client",
   "dsf-daemon",
+
+  "dsf-iot",
   
   "rust-kad",
 ]
