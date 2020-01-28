@@ -1,0 +1,18 @@
+[workspace]
+
+members = [
+  "dsf-core",
+  "dsf-rpc",
+  "dsf-client",
+  "dsf-daemon",
+  
+  "rust-kad",
+]
+
+[patch.crates-io]
+dsf-core = { path = "./dsf-core" }
+dsf-rpc = { path = "./dsf-rpc" }
+dsf-client = { path = "./dsf-client" }
+
+#rust-kad = { path = "./rust-kad" }
+

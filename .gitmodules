@@ -1,0 +1,15 @@
+[submodule "rust-kad"]
+	path = rust-kad
+	url = ../../ryankurte/rust-kad
+[submodule "dsf-core"]
+	path = dsf-core
+	url = ../dsf-core
+[submodule "dsf-rpc"]
+	path = dsf-rpc
+	url = ../dsf-rpc
+[submodule "dsf-client"]
+	path = dsf-client
+	url = ../dsf-client
+[submodule "dsf-daemon"]
+	path = dsf-daemon
+	url = ../dsf-daemon
