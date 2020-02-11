@@ -612,6 +612,8 @@ dependencies = [
  "serde",
  "slice-ext",
  "sodiumoxide",
+ "strum",
+ "strum_macros",
 ]
 
 [[package]]
@@ -658,6 +660,9 @@ name = "dsf-iot"
 version = "0.1.0"
 dependencies = [
  "async-std",
+ "bytes 0.5.4",
+ "chrono",
+ "chrono-english",
  "dsf-client",
  "dsf-core",
  "dsf-rpc",
