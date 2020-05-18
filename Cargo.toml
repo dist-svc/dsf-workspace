@@ -7,8 +7,6 @@ members = [
   "dsf-daemon",
 
   "dsf-iot",
-  
-  "rust-kad",
 ]
 
 [patch.crates-io]
@@ -16,5 +14,5 @@ dsf-core = { path = "./dsf-core" }
 dsf-rpc = { path = "./dsf-rpc" }
 dsf-client = { path = "./dsf-client" }
 
-#rust-kad = { path = "./rust-kad" }
+#rust-kad = { path = "../rust-kad" }
 
