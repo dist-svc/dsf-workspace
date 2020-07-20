@@ -1,5 +1,4 @@
 [workspace]
-
 members = [
   "dsf-core",
   "dsf-rpc",
@@ -16,3 +15,4 @@ dsf-client = { path = "./dsf-client" }
 
 #rust-kad = { path = "../rust-kad" }
 
+managed = { path = "../rust-managed" }
