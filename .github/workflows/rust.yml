@@ -1,0 +1,123 @@
+name: Rust CI test / build / deploy
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          override: true
+          components: rustfmt, clippy
+
+      - name: Configure cargo cache
+        uses: actions/cache@v1
+        with:
+          key: cargo-check
+          path: ${{ env.HOME }}/.cargo"
+
+      - name: Configure target cache
+        uses: actions/cache@v1
+        with:
+          key: target-check
+          path: ./target
+
+      - name: Run cargo fmt
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: -- --check
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Setup toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          override: true
+
+      - name: Configure cargo cache 
+        uses: actions/cache@v1
+        with:
+          key: cargo-test
+          path: ${{ env.HOME }}/.cargo"
+
+      - name: Configure target cache
+        uses: actions/cache@v1
+        with:
+          key: target-test
+          path: ./target
+        
+      - name: Run cargo test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+    
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-unknown-linux-gnu
+            os: ubuntu-latest
+            use_cross: false
+            experimental: false
+          - target: armv7-unknown-linux-gnueabihf 
+            os: ubuntu-latest
+            use_cross: true
+            experimental: false
+          - target: x86_64-apple-darwin
+            os: macos-latest
+            use_cross: false
+            experimental: false
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Configure toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: nightly
+        target:  ${{ matrix.target }}
+        override: true
+    
+    - name: Configure cargo cache 
+      uses: actions/cache@v1
+      with:
+        key: cargo-${{ matrix.os }}-${{ matrix.target }}
+        path: ${{ env.HOME }}/.cargo"
+
+    - name: Configure target cache
+      uses: actions/cache@v1
+      with:
+        key: target-${{ matrix.os }}-${{ matrix.target }}
+        path: ./target
+    
+    - name: Build release
+      uses: actions-rs/cargo@v1
+      with:
+        use-cross: ${{ matrix.use_cross }}
+        command: build
+        args: --release --target ${{ matrix.target }}
+    
+    - name: Create archive
+      run: tar -cvf target/dsf-testing-${{ matrix.target }}.tgz -C target/${{ matrix.target }}/release/ dsfd dsfc dsfm
+      
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: dsf-testing-${{ matrix.target }}.tgz
+        path: target/dsf-testing-${{ matrix.target }}.tgz
