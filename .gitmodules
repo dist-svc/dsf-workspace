@@ -13,9 +13,6 @@
 [submodule "dsf-daemon"]
 	path = dsf-daemon
 	url = ../dsf-daemon
-[submodule "dsf-iot"]
-	path = dsf-iot
-	url = ../dsf-iot
 [submodule "dsf-proto"]
 	path = dsf-proto
 	url = ../dsf-proto
