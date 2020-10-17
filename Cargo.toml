@@ -4,15 +4,12 @@ members = [
   "dsf-rpc",
   "dsf-client",
   "dsf-daemon",
-
-  #"dsf-iot",
 ]
 
 [patch.crates-io]
-#dsf-core = { path = "./dsf-core" }
-#dsf-rpc = { path = "./dsf-rpc" }
-#dsf-client = { path = "./dsf-client" }
+dsf-core = { path = "./dsf-core" }
+dsf-rpc = { path = "./dsf-rpc" }
+dsf-client = { path = "./dsf-client" }
 
 #rust-kad = { path = "../rust-kad" }
-
 #managed = { path = "../rust-managed" }

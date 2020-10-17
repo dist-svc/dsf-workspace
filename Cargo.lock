@@ -207,15 +207,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "bme280"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bc93357f2a5603736e2c1f1ba8e18e9ec80efa7fdade5d6a37c11362b76363f4"
-dependencies = [
- "embedded-hal",
-]
-
-[[package]]
 name = "bstr"
 version = "0.2.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -281,15 +272,6 @@ name = "cassowary"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "df8670b8c7b9dae1793364eafadf7239c40d669904660c5960d74cfd80b46a53"
-
-[[package]]
-name = "cast"
-version = "0.2.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4b9434b9a5aa1450faa3f9cb14ea0e8c53bb5d2b3c1bfd1ab4fc03e9f33fbfb0"
-dependencies = [
- "rustc_version",
-]
 
 [[package]]
 name = "cc"
@@ -390,7 +372,7 @@ dependencies = [
  "libc",
  "regex",
  "terminal_size",
- "termios 0.3.2",
+ "termios",
  "unicode-width",
  "winapi 0.3.9",
  "winapi-util",
@@ -512,7 +494,7 @@ version = "3.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7a4ba686dff9fa4c1c9636ce1010b0cf98ceb421361b0bb3d6faeec43bd217a7"
 dependencies = [
- "nix 0.17.0",
+ "nix",
  "winapi 0.3.9",
 ]
 
@@ -751,30 +733,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "dsf-iot"
-version = "0.1.0"
-dependencies = [
- "async-std",
- "bme280",
- "byteorder",
- "bytes 0.5.5",
- "chrono",
- "chrono-english",
- "dsf-client",
- "dsf-core",
- "dsf-rpc",
- "futures 0.3.5",
- "humantime 2.0.1",
- "linux-embedded-hal",
- "log",
- "managed",
- "serde",
- "structopt",
- "tracing",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "dsf-rpc"
 version = "0.1.2"
 dependencies = [
@@ -799,16 +757,6 @@ name = "either"
 version = "1.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bb1f6b1ce1c140482ea30ddd3335fc0024ac7ee112895426e0a629a6c20adfe3"
-
-[[package]]
-name = "embedded-hal"
-version = "0.2.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fa998ce59ec9765d15216393af37a58961ddcefb14c753b4816ba2191d865fcb"
-dependencies = [
- "nb",
- "void",
-]
 
 [[package]]
 name = "encode_unicode"
@@ -1241,18 +1189,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "i2cdev"
-version = "0.4.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3c0eb3d9b6b02dc2508ee23439170004e44344bab9d53a490eb1f64c885b5003"
-dependencies = [
- "bitflags",
- "byteorder",
- "libc",
- "nix 0.14.1",
-]
-
-[[package]]
 name = "ident_case"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1306,15 +1242,6 @@ dependencies = [
  "lazy_static 1.4.0",
  "number_prefix",
  "regex",
-]
-
-[[package]]
-name = "ioctl-rs"
-version = "0.1.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f7970510895cee30b3e9128319f2cefd4bde883a39f38baa279567ba3a7eb97d"
-dependencies = [
- "libc",
 ]
 
 [[package]]
@@ -1469,22 +1396,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "linux-embedded-hal"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e04b2d8e29bb2d949bc9f0ed8acee5033833166731c7e479d0c74d7ef2ab042d"
-dependencies = [
- "cast",
- "embedded-hal",
- "i2cdev",
- "nb",
- "serial-core",
- "serial-unix",
- "spidev",
- "sysfs_gpio",
-]
-
-[[package]]
 name = "lock_api"
 version = "0.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1628,12 +1539,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "nb"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1411551beb3c11dedfb0a90a0fa256b47d28b9ec2cdff34c25a2fa59e45dbdc"
-
-[[package]]
 name = "net2"
 version = "0.2.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1642,19 +1547,6 @@ dependencies = [
  "cfg-if",
  "libc",
  "winapi 0.3.9",
-]
-
-[[package]]
-name = "nix"
-version = "0.14.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c722bee1037d430d0f8e687bbdbf222f27cc6e4e68d5caf630857bb2b6dbdce"
-dependencies = [
- "bitflags",
- "cc",
- "cfg-if",
- "libc",
- "void",
 ]
 
 [[package]]
@@ -2275,27 +2167,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "serial-core"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3f46209b345401737ae2125fe5b19a77acce90cd53e1658cda928e4fe9a64581"
-dependencies = [
- "libc",
-]
-
-[[package]]
-name = "serial-unix"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f03fbca4c9d866e24a459cbca71283f545a37f8e3e002ad8c70593871453cab7"
-dependencies = [
- "ioctl-rs",
- "libc",
- "serial-core",
- "termios 0.2.2",
-]
-
-[[package]]
 name = "sha2"
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2410,17 +2281,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "spidev"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aa5aa93a87c20f4efdf494917ef8fb475522601256ba6bb00ad1e6101f779fe9"
-dependencies = [
- "bitflags",
- "libc",
- "nix 0.14.1",
-]
-
-[[package]]
 name = "stable_deref_trait"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2521,15 +2381,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "sysfs_gpio"
-version = "0.5.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "24961a55846623d8e4f6cec38718945116fed8d6970336a7110710a07aa9b5d1"
-dependencies = [
- "nix 0.14.1",
-]
-
-[[package]]
 name = "take_mut"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2586,15 +2437,6 @@ checksum = "8038f95fc7a6f351163f4b964af631bd26c9e828f7db085f2a84aca56f70d13b"
 dependencies = [
  "libc",
  "winapi 0.3.9",
-]
-
-[[package]]
-name = "termios"
-version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5d9cf598a6d7ce700a4e6a9199da127e6819a61e64b68609683cc9a01b5683a"
-dependencies = [
- "libc",
 ]
 
 [[package]]
