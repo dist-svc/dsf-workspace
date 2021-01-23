@@ -1,6 +1,6 @@
 [submodule "rust-kad"]
 	path = rust-kad
-	url = ../../ryankurte/rust-kad
+	url = git@github.com:ryankurte/rust-kad.git
 [submodule "dsf-core"]
 	path = dsf-core
 	url = ../dsf-core
