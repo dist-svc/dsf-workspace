@@ -4,12 +4,13 @@ members = [
   "dsf-rpc",
   "dsf-client",
   "dsf-daemon",
+  "rust-kad",
 ]
 
 [patch.crates-io]
 dsf-core = { path = "./dsf-core" }
 dsf-rpc = { path = "./dsf-rpc" }
 dsf-client = { path = "./dsf-client" }
+kad = { path = "./rust-kad" }
 
-#rust-kad = { path = "../rust-kad" }
-#managed = { path = "../rust-managed" }
+sodiumoxide = { git = "https://github.com/sodiumoxide/sodiumoxide", branch = "master" }

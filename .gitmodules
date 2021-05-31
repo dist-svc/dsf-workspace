@@ -1,6 +1,3 @@
-[submodule "rust-kad"]
-	path = rust-kad
-	url = ../../ryankurte/rust-kad
 [submodule "dsf-core"]
 	path = dsf-core
 	url = ../dsf-core
@@ -16,3 +13,6 @@
 [submodule "dsf-proto"]
 	path = dsf-proto
 	url = ../dsf-proto
+[submodule "rust-kad"]
+	path = rust-kad
+	url = ../../ryankurte/rust-kad
