@@ -4,8 +4,12 @@ members = [
   "dsf-rpc",
   "dsf-client",
   "dsf-daemon",
+  "dsf-iot",
   "rust-kad",
 ]
+
+[build]
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
 
 [patch.crates-io]
 dsf-core = { path = "./dsf-core" }

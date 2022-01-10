@@ -16,3 +16,6 @@
 [submodule "rust-kad"]
 	path = rust-kad
 	url = ../../ryankurte/rust-kad
+[submodule "dsf-iot"]
+	path = dsf-iot
+	url = git@github.com:dist-svc/dsf-iot.git
