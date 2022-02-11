@@ -19,3 +19,6 @@
 [submodule "dsf-iot"]
 	path = dsf-iot
 	url = git@github.com:dist-svc/dsf-iot.git
+[submodule "dsf-dns"]
+	path = dsf-dns
+	url = git@github.com:dist-svc/dsf-dns.git

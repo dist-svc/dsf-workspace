@@ -5,6 +5,7 @@ members = [
   "dsf-client",
   "dsf-daemon",
   "dsf-iot",
+  "dsf-dns",
   "rust-kad",
 ]
 
