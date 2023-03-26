@@ -1,9 +1,9 @@
 [workspace]
 members = [
-  "dsf-core",
-  "dsf-rpc",
   "dsf-client",
+  "dsf-core",
   "dsf-daemon",
+  "dsf-rpc",
 #  "dsf-engine",
 #  "dsf-iot",
 #  "dsf-dns",
