@@ -4,9 +4,9 @@ members = [
   "dsf-rpc",
   "dsf-client",
   "dsf-daemon",
-  "dsf-engine",
-  "dsf-iot",
-  "dsf-dns",
+#  "dsf-engine",
+#  "dsf-iot",
+#  "dsf-dns",
   "rust-kad",
 ]
 
@@ -19,9 +19,9 @@ dsf-rpc = { path = "./dsf-rpc" }
 dsf-client = { path = "./dsf-client" }
 kad = { path = "./rust-kad" }
 
-sodiumoxide = { git = "https://github.com/sodiumoxide/sodiumoxide", branch = "master" }
-stor = { path = "../stor" }
+#sodiumoxide = { git = "https://github.com/sodiumoxide/sodiumoxide", branch = "master" }
+#stor = { path = "../stor" }
 
-encdec = { path = "../encdec/core" }
-encdec-base = { path = "../encdec/base" }
-encdec-macros = { path = "../encdec/macros" }
+#encdec = { path = "../encdec/core" }
+#encdec-base = { path = "../encdec/base" }
+#encdec-macros = { path = "../encdec/macros" }

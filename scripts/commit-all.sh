@@ -6,9 +6,12 @@ if [ -z "$1" ]; then
 fi
 
 for d in dsf-*/ ; do
-  echo "Creating commit for $d"
+  if [[ `git -C $d status --porcelain` ]]; then
+      echo "Creating commit for $d"
 
-  git -C $d commit -am "$1"
-  git push
+    git -C $d commit -am "$1"
+    git push
+  else
+    echo "No changes for $d"
+  fi
 done
-
