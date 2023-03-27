@@ -15,3 +15,9 @@ for d in dsf-*/ ; do
     echo "No changes for $d"
   fi
 done
+
+if [[ `git status --porcelain` ]]; then
+  echo "Updating workspace"
+  git commit -am "$1"
+  git push
+fi
