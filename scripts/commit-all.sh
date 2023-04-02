@@ -10,14 +10,16 @@ for d in dsf-*/ ; do
       echo "Creating commit for $d"
 
     git -C $d commit -am "$1"
-    git push
   else
     echo "No changes for $d"
   fi
+
+  git push
 done
 
 if [[ `git status --porcelain` ]]; then
   echo "Updating workspace"
   git commit -am "$1"
-  git push
 fi
+
+git push
