@@ -4,7 +4,7 @@ members = [
   "dsf-core",
   "dsf-daemon",
   "dsf-rpc",
-#  "dsf-engine",
+  "dsf-engine",
   "dsf-iot",
 #  "dsf-dns",
   "rust-kad",
@@ -17,6 +17,7 @@ rustflags = ["-C", "link-arg=-fuse-ld=lld"]
 dsf-core = { path = "./dsf-core" }
 dsf-rpc = { path = "./dsf-rpc" }
 dsf-client = { path = "./dsf-client" }
+dsf-engine = { path = "./dsf-engine" }
 kad = { path = "./rust-kad" }
 
 #sodiumoxide = { git = "https://github.com/sodiumoxide/sodiumoxide", branch = "master" }
